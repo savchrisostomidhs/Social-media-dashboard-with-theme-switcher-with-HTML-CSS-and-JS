@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: hsl(0, 0%, 100%);
+    --topBackground: hsl(225, 100%, 98%);
+    --cardBackground: hsl(227, 47%, 96%);
+    --paragraphs: hsl(228, 12%, 44%);
+    --headers: hsl(230, 17%, 14%);
+    --hover: hsl(227, 47%, 90%);
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    align-items: center;
+    background-color: var(--background);
+    color: var(--paragraphs);
+    display: flex;
+    flex-direction: column;
+    font-family: Inter, sans-serif;
+    gap: 50px;
+    justify-content: center;
+}
+
+/* Top Background */
+
+.background {
+    background-color: var(--topBackground);
+    border-radius: 0 0 10px 10px;
+    height: 245px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+/* Position */
+
+.dashboard,
+.overview {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.cards,
+.overview-cards {
+    align-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    width: 100%;
+}
+
+/* Dashboard */
+
+.dashboard {
+    gap: 45px;
+}
+
+/* Header */
+
+.header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    color: var(--headers);
+}
+
+.header p {
+    font-weight: bold;
+}
+
+.button {
+    align-items: center;
+    display: flex;
+    gap: 14px;
+}
+
+.toggle {
+    background: hsl(230, 22%, 74%);
+    border-radius: 50px;
+    cursor: pointer;
+    height: 24px;
+    padding: 4px;
+    position: relative;
+    width: 48px;
+}
+
+.toggle:hover {
+    background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+.toggle .circle {
+    background-color: var(--background);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 18px;
+    position: absolute;
+    right: 4px;
+    top: 3px;
+    width: 18px;
+}
+
+/* Cards */
+
+.cards {
+    gap: 30px;
+}
+
+.dashboard .card {
+    align-items: center;
+    background-color: var(--cardBackground);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 215px;
+    justify-content: space-between;
+    padding: 25px 0 20px;
+}
+
+.facebook {
+    border-top: 5px solid hsl(208, 92%, 53%);
+}
+
+.twitter {
+    border-top: 5px solid hsl(203, 89%, 53%);
+}
+
+.border {
+    background-image: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    border-bottom: 1px solid var(--cardBackground);
+    border-left: 1px solid var(--cardBackground);
+    border-left: 1px solid var(--cardBackground);
+    border-radius: 10px 10px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    height: 215px;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.dashboard .instagram {
+    border-radius: 6px 6px 10px 10px;
+    height: 210px;
+}
+
+.youtube {
+    border-top: 5px solid hsl(348, 97%, 39%);
+}
+
+.card .tag,
+.card .today {
+    align-items: center;
+    display: flex;
+}
+
+.card .tag {
+    gap: 8px;
+}
+
+.card .tag p {
+    font-weight: bold;
+}
+
+.card .today {
+    color: hsl(163, 72%, 41%);
+    font-weight: bold;
+    gap: 4px;
+}
+
+.youtube .today {
+    color: hsl(356, 69%, 56%);
+}
+
+.card .today img {
+    height: 4px;
+    width: 8px;
+}
+
+.card .followers {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .followers p:nth-child(1) {
+    color: var(--headers);
+    font-size: 58px;
+    font-weight: bold;
+}
+
+.card .followers p:nth-child(2) {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Overview */
+
+.overview {
+    gap: 24px;
+}
+
+.overview .title {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Overview Cards */
+
+.overview-cards {
+    column-gap: 30px;
+    row-gap: 24px;
+}
+
+.overview-cards .card {
+    align-items: center;
+    background-color: var(--cardBackground);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 124px;
+    justify-content: space-between;
+    padding: 24px;
+    width: 100%;
+}
+
+.overview-cards .card .stats,
+.overview-cards .card .details {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.overview-cards .card .stats p {
+    color: var(--paragraphs);
+    font-weight: bold;
+}
+
+.overview-cards .card .details>p {
+    color: var(--headers);
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.overview-cards .card .percent {
+    align-items: center;
+    color: hsl(163, 72%, 41%);
+    display: flex;
+    font-weight: bold;
+    gap: 2px;
+}
+
+.overview-cards .card .percent .red {
+    color: hsl(356, 69%, 56%);
+}
+
+.overview-cards .card .percent img {
+    height: 4px;
+    width: 8px;
+}
+
+.card:hover {
+    background-color: var(--hover);
+    cursor: pointer;
+}
+
+.attribution {
+    display: none;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@keyframes dark {
+    from {
+        right: 4px;
+    }
+
+    to {
+        right: 26px;
+    }
+}
+
+@keyframes light {
+    from {
+        right: 26px;
+    }
+
+    to {
+        right: 4px;
+    }
+}
+
+@media (max-height: 700px) {
+    body {
+        gap: 20px;
+    }
+
+    .dashboard .card {
+        height: 150px;
+        padding: 15px 0 10px;
+    }
+
+    .border {
+        height: 150px;
+    }
+
+    .dashboard .instagram {
+        height: 145px;
+    }
+
+    .card .followers p:nth-child(1) {
+        font-size: 24px;
+    }
+
+    .card .followers p:nth-child(2) {
+        font-size: 12px;
+    }
+
+    .overview .title {
+        font-size: 22px;
+    }
+
+    .overview-cards .card {
+        height: 94px;
+        padding: 14px 20px;
+    }
+
+    .overview-cards .card .details>p {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 950px) {
+    body {
+        justify-content: flex-start;
+        padding: 20px 0 100px;
+    }
+
+    .cards,
+    .overview-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .button {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .dashboard,
+    .overview {
+        width: 90%;
+    }
+
+    .cards,
+    .overview-cards {
+        grid-template-columns: 1fr;
+    }
+}
